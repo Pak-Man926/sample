@@ -16,28 +16,32 @@ class CounterApp extends StatelessWidget
         return MaterialApp(
             home: Scaffold(
                 appBar: AppBar(
+                    backgroundColor: Colors.blue,
                     centerTitle: true,
                     title: Text("GetX Counter sample"),
                     
                 ),
-                body: Center(
-                    child: Obx(() => Text("Count: ${controller.count}")),
-                ),
-                floatingActionButton: Row(
-                  children: [
-                    FloatingActionButton(
-                        onPressed: controller.increment,
-                        child: Icon(Icons.add),
+                body: Column(
+                    children:[
+                         Obx(() => Text("Count: ${controller.count}")),
+                    SizedBox(height: 20),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FloatingActionButton(
+                            onPressed: controller.increment,
+                            child: Icon(Icons.add),
+                        ),
+                        SizedBox(width: 10),
+                        FloatingActionButton(
+                            onPressed: controller.decrement,
+                            child: Icon(Icons.remove),
+                        ),
+                      ],
                     ),
-                    SizedBox(width: 10),
-                    FloatingActionButton(
-                        onPressed: controller.decrement,
-                        child: Icon(Icons.remove),
-                    ),
-                  ],
+                    ]
+                )
                 ),
-                
-            )
         );
     }
 }

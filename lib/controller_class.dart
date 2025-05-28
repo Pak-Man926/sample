@@ -8,4 +8,9 @@ class CounterController extends GetxController
   {
     count++;
   }
+
+  void decrement()
+  {
+    count--;
+  }
 }

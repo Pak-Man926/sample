@@ -19,10 +19,20 @@ class CounterApp extends StatelessWidget
                 body: Center(
                     child: Obx(() => Text("Count: ${controller.count}")),
                 ),
-                floatingActionButton: FloatingActionButton(
-                    onPressed: controller.increment,
-                    child: Icon(Icons.add),
-                )
+                floatingActionButton: Row(
+                  children: [
+                    FloatingActionButton(
+                        onPressed: controller.increment,
+                        child: Icon(Icons.add),
+                    ),
+                    SizedBox(width: 10),
+                    FloatingActionButton(
+                        onPressed: controller.decrement,
+                        child: Icon(Icons.remove),
+                    ),
+                  ],
+                ),
+                
             )
         );
     }

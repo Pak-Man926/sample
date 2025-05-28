@@ -2,7 +2,8 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 import "controller_class.dart";
 
-void manin() {
+void main() 
+{
     runApp(CounterApp());
 }
 class CounterApp extends StatelessWidget
